@@ -5,7 +5,7 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    // distDir: 'out', // Where to export all pages
+    distDir: 'out', // Where to export all pages
     // trailingSlash: true,
     // assetPrefix: '.',
 
