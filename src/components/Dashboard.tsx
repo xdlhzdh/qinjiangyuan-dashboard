@@ -1,7 +1,7 @@
 // src/components/Dashboard.tsx
 import React from 'react';
 import { Box, Container, Grid, Paper, Typography } from '@mui/material';
-import BarChartComponent from '@components/BarChart';
+import BarChartNoSsr from '@components/BarChart';
 
 const data = [
     { name: 'Jan', uv: 3000 },
@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => (
             <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
                     <Typography variant="h6">Overview</Typography>
-                    <BarChartComponent width={600} height={300} data={data} />
+                    <BarChartNoSsr width={600} height={300} data={data} />
                 </Paper>
             </Grid>
             {/* Recent Sales */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import withoutSsr from '@hocs/withoutSsr';
 
 const BarChartComponent = ({ width, height, data = [] }) => {
     return (
@@ -14,4 +15,6 @@ const BarChartComponent = ({ width, height, data = [] }) => {
     );
 };
 
-export default BarChartComponent;
+const BarChartNoSsr = withoutSsr(BarChartComponent);
+
+export default BarChartNoSsr;
