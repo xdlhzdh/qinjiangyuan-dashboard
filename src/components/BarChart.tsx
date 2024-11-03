@@ -2,7 +2,19 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import withoutSsr from '@hocs/withoutSsr';
 
-const BarChartComponent = ({ width, height, data = [] }) => {
+
+export interface DataPoint {
+    name: string;
+    uv: number;
+}
+
+interface ICustomBarChar {
+    width: number;
+    height: number;
+    data: DataPoint[];
+}
+
+const BarChartComponent: React.FC<ICustomBarChar> = ({ width, height, data = [] }) => {
     return (
         <BarChart width={width} height={height} data={data}>
             <CartesianGrid strokeDasharray="3 3" />

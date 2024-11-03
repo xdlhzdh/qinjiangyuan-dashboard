@@ -1,9 +1,11 @@
 // components/ProductCreate.tsx
 "use client";
 import React, { ChangeEvent, useState, useCallback, useEffect } from 'react';
-import { TextField, Select, MenuItem, InputLabel, FormControl, Button, Grid, Box, Typography, Paper, IconButton } from '@mui/material';
+import { TextField, Select, MenuItem, InputLabel, FormControl, Button, Box, Typography, Paper, IconButton } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
+import Grid from '@mui/material/Grid2';
 import Image from 'next/image';
+import withSsr from 'src/hocs/withSsr';
 
 
 const ProductCreate = () => {
@@ -101,7 +103,7 @@ const ProductCreate = () => {
             <Box component="form" noValidate autoComplete="off">
                 <Grid container spacing={2}>
                     {/* 桌面是中等屏幕，占满整个宽度 */}
-                    <Grid item md={12}>
+                    <Grid size={{ md: 12 }} >
                         <TextField
                             fullWidth
                             label="商品名称"
@@ -113,7 +115,7 @@ const ProductCreate = () => {
                             }}
                         />
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid size={{ md: 6 }} >
                         <TextField
                             fullWidth
                             label="商品单价"
@@ -126,7 +128,7 @@ const ProductCreate = () => {
                             }}
                         />
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid size={{ md: 6 }} >
                         <TextField
                             fullWidth
                             label="商品库存"
@@ -139,7 +141,7 @@ const ProductCreate = () => {
                             }}
                         />
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid size={{ md: 6 }} >
                         <FormControl fullWidth variant="outlined">
                             <InputLabel>商品规格</InputLabel>
                             <Select
@@ -165,7 +167,7 @@ const ProductCreate = () => {
                             </Select>
                         </FormControl>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid size={{ md: 6 }} >
                         <FormControl fullWidth variant="outlined">
                             <InputLabel>货仓</InputLabel>
                             <Select
@@ -183,7 +185,7 @@ const ProductCreate = () => {
                             </Select>
                         </FormControl>
                     </Grid>
-                    <Grid item md={12}>
+                    <Grid size={{ md: 12 }} >
                         <TextField
                             fullWidth
                             label="商品描述"
@@ -197,7 +199,7 @@ const ProductCreate = () => {
                             }}
                         />
                     </Grid>
-                    <Grid item md={12}>
+                    <Grid size={{ md: 12 }} >
                         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 <Button
@@ -254,4 +256,6 @@ const ProductCreate = () => {
     );
 };
 
-export default ProductCreate;
+const ProductCreateSsr = withSsr(ProductCreate);
+
+export default ProductCreateSsr;
